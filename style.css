@@ -1,0 +1,70 @@
+#main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    padding: 1vw;
+}
+
+#headline {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 5vw;
+}
+
+#mainHeading {
+    font-size: 38px;
+}
+
+#contents {
+    position: relative;
+    border: 1px solid black;
+}
+
+#inputRange {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+#priceParameters {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 5vw;
+}
+
+.ptext3 {
+    align-self: center;
+    font-size: 8px;
+}
+
+#pDiscount {
+    border: 0.1px solid black;
+    border-radius: 20px;
+    padding: 1px 4px;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+    align-items: center;
+}
+
+ul {
+    list-style-image: url('images/icon-check.svg');
+    padding: 0 0.5vw;
+}
+
+#start {
+    outline: none;
+    background-color: black;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: white;
+    width: 130px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 15px;
+}
+
