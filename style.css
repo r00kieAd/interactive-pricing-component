@@ -8,6 +8,7 @@
 }
 
 #headline {
+  position: relative;
   text-align: center;
   font-size: 15px;
   margin-bottom: 5vw;
@@ -76,50 +77,75 @@
 
 #priceParameters {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  margin: 0 18%;
 }
 
 .toggle {
-  background: #efefed;
-  border: 1px solid #000000;
-  border-radius: 20px;
+  top: 2px;
+  --width: 40px;
+  --height: calc(var(--width)/2);
+  --border-radius: calc(var(--height)/2);
   display: inline-block;
-  padding: 15px 0px;
+  cursor: pointer;
   position: relative;
 }
 
-input[type=radio] {
+.toggle__input {
   display: none;
 }
 
-label {
-  width: 100px;
-  display: inline-block;
-  text-align: center;
+.toggle__fill {
   position: relative;
-  z-index: 5;
-  cursor: pointer;
-  color: white;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background: #dddddd;
+  transition: background 0.2s;
 }
 
-.selector {
-  height: 50px;
-  width: 100px;
-  background: black;
-  border-radius: 20px;
+.toggle__input:checked ~ .toggle__fill {
+  background: #009578;
+}
+
+.toggle__fill::after {
+  content: "";
+  color: transparent;
   position: absolute;
-  top: 2px;
-  left: 2px;
-  z-index: 1;
-  transition: left 0.25s ease-in-out;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: var(--height);
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
 }
 
-.Yearly:checked ~ .selector {
-  left: 100px;
+.toggle__input:checked ~ .toggle__fill::after {
+  transform: translateX(var(--height));
 }
 
-.Monthly:checked ~ .selector {
-  left: 2x;
+.ptext2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.discount-label {
+  margin-left: 5px;
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
+#pDiscount {
+  border: 0.1px solid black;
+  border-radius: 20px;
+  padding: 1px 4px;
+  line-height: 8px !important;
+  font-size: 6px !important;
+  text-align: center;
+  font-size: 8px;
 }
 
 #footer {

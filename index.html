@@ -31,20 +31,27 @@
             </div>
           </div>
         </div>
-        <input type="range" name="amt" id="amt" min="10" max="1000", value="500">
+        <input type="range" name="amt" id="amt" min="10" max="1000" , value="500">
       </div>
       <div id="priceParameters">
+        <div class="pText1 billing-label">
+          <p id="value1">Monthly Billing</p>
+        </div>
         <div class="pSelector">
-          <div class="toggle">
-            <input type="radio" name="toggle" value="Monthly" class="Monthly" id="v1"/>
-            <label for="v1">Monthly</label>
-            
-            <input type="radio" name"toggle" value="Yearly" class="Yearly" id="v2" />
-            <label for="v2">Yearly</label>
-              
-            <div class="selector">&nbsp;</div>
+          <label for="myToggle" class="toggle">
+            <input class="toggle__input" type="checkbox" id="myToggle">
+            <div class="toggle__fill"></div>
+          </label>
+        </div>
+        <div class="ptext2 billing-label">
+          <div class="yearly-billing-label">
+            <p id="value2">Yearly Billing</p>
+          </div>
+          <div class="discount-label">
+            <span id="pDiscount">25% discount</span>
           </div>
         </div>
+
       </div>
       <hr>
       <div id="footer">
