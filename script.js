@@ -1,6 +1,7 @@
-$('#amt').on("change", function () {
+$('#amt').on("input", function () {
     let pageViews = $('#amt').val();
-    $('#views').text(pageViews + `${pageViews == 1000 ? 'M' : 'K'}`);
+    $('#views').text(`${pageViews == 1000 ? '1': pageViews}` + `${pageViews == 1000 ? 'M' : 'K'}`);
+    $('.progress').css('width', `${parseInt(pageViews/10)}%`);
     if (pageViews >= 10 && pageViews < 50) {
         $('.amount span').text(`${$('#myToggle').is(':checked') ? parseFloat(8 * 0.25) : 8}`);
     } else if (pageViews >= 50 && pageViews < 100) {
@@ -17,12 +18,4 @@ $('#amt').on("change", function () {
 $('#myToggle').on('change', function () {
     const rate = $('.amount span').text();
     $('.amount span').text(`${$('#myToggle').is(':checked') ? parseFloat(rate * 0.25) : parseInt(rate / 0.25)}`);
-})
-
-$('input[type="radio"] + label').click(function () {
-    if ($(this).attr('for') == 'v1') {
-        $('.Yearly').prop('checked', false);
-    } else {
-        $('.Monthly').prop('checked', false);
-    }
 })

@@ -43,6 +43,19 @@
   text-align: center;
 }
 
+#rangeInputDiv {
+  width: inherit;
+  position: relative;
+}
+
+.progress {
+  position: absolute;
+  top: 8.2px;
+  width: 50%;
+  height: 10px;
+  background: white;
+}
+
 #amt {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -53,22 +66,24 @@
   border-radius: 5px;
   background: black;
   outline: none;
-  opacity: 0.7;
   transition: opacity 0.2s;
 }
 
 #amt::-webkit-slider-thumb {
+  position: relative;
   -webkit-appearance: none;
   appearance: none;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border: 0.1px solid black;
   border-radius: 30px;
+  background-color: #ffffff;
   background: url("images/icon-slider.svg");
   background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   cursor: ew-resize;
+  z-index: 1;
 }
 
 #amt::-webkit-slider-runnable-track {
