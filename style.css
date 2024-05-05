@@ -1,126 +1,147 @@
 #main {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 36rem;
-    padding: 1vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36rem;
+  padding: 1vw;
 }
 
 #headline {
-    text-align: center;
-    font-size: 15px;
-    margin-bottom: 5vw;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 5vw;
 }
 
 #mainHeading {
-    font-size: 38px;
+  font-size: 38px;
 }
 
 #contents {
-    position: relative;
-    border: 1px solid black;
+  position: relative;
+  border: 1px solid black;
 }
 
 .pageview {
-    display: flex;
-    justify-content: left;
-    align-items: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .price {
-    display: flex;
-    justify-content: right;
-    align-items: center;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
 
 #inputRange {
-    position: relative;
-    margin: 1.5rem 0;
-    padding: 0 4vw;
-    width: 100%;
-    text-align: center;
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 0 4vw;
+  width: 100%;
+  text-align: center;
 }
 
 #amt {
-    -webkit-appearance: none;
-    appearance: none;
-    width: inherit;
-    height: 10px;
-    border: 0.1px solid black;
-    border-radius: 5px;
-    background: black;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: inherit;
+  height: 10px;
+  border: 0.1px solid black;
+  border-radius: 5px;
+  background: black;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 
 #amt::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 30px;
-    height: 30px;
-    border: 0.1px solid black;
-    border-radius: 30px;
-    background: url('images/icon-slider.svg');
-    background-color: white;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: ew-resize;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 0.1px solid black;
+  border-radius: 30px;
+  background: url("images/icon-slider.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: ew-resize;
 }
 
 #amt::-webkit-slider-runnable-track {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #priceParameters {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.ptext2 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.toggle {
+  background: #efefed;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 15px 0px;
+  position: relative;
 }
 
-.discount-label {
-    align-self: flex-start;
-    margin-left: 5px;
+input[type=radio] {
+  display: none;
 }
 
-#pDiscount {
-    border: 0.1px solid black;
-    border-radius: 20px;
-    padding: 1px 4px;
-    line-height: 8px !important;
-    font-size: 6px !important;
-    text-align: center;
-    font-size: 8px;
+label {
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  color: white;
+}
+
+.selector {
+  height: 50px;
+  width: 100px;
+  background: black;
+  border-radius: 20px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 1;
+  transition: left 0.25s ease-in-out;
+}
+
+.Yearly:checked ~ .selector {
+  left: 100px;
+}
+
+.Monthly:checked ~ .selector {
+  left: 2x;
 }
 
 #footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1vw;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw;
+  align-items: center;
 }
 
 ul {
-    list-style-image: url('images/icon-check.svg');
-    padding: 0 0.5vw;
+  list-style-image: url("images/icon-check.svg");
+  padding: 0 0.5vw;
 }
 
 #start {
-    outline: none;
-    background-color: black;
-    border: 1px solid transparent;
-    border-radius: 15px;
-    color: white;
-    width: 130px;
-    height: 30px;
-    line-height: 20px;
-    font-size: 15px;
-}
-
+  outline: none;
+  background-color: black;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  color: white;
+  width: 130px;
+  height: 30px;
+  line-height: 20px;
+  font-size: 15px;
+}/*# sourceMappingURL=style.css.map */
