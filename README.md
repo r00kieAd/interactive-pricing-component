@@ -16,8 +16,6 @@
   <img alt="License" src="https://img.shields.io/github/license/r00kieAd/interactive-pricing-component?color=56BEB8">
 </p>
 
-Status
-
 <h4 align="center"> 
 	🚧  Interactive Pricing Component 🚀 Under construction...  🚧
 </h4> 
