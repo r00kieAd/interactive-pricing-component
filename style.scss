@@ -1,14 +1,30 @@
-$form-range-thumb-bg: #11cdee;
-$form-range-thumb-active-bg: #11cdee;
-$form-range-thumb-slider-bg: #b6d4fe;
-$form-range-thumb-border: #959292;
+$softCyan: hsl(174, 77%, 80%);
+$strongCyan: hsl(174, 86%, 45%);
+$lightGrayishRed: hsl(14, 92%, 95%);
+$lightRed: hsl(15, 100%, 70%);
+$paleBlue: hsl(226, 100%, 87%);
+$veryPaleBlue: hsl(230, 100%, 99%);
+$lightGrayishBlue: hsl(224, 65%, 95%);
+$lightGrayishBlueII: hsl(223, 50%, 87%);
+$grayishBlue: hsl(225, 20%, 60%);
+$darkDesaturatedBlue: hsl(227, 35%, 25%);
+
+body {
+    background: url(images/bg-pattern.svg);
+    background-position: center;
+    background-size: 100vw 120vh;
+    background-repeat: no-repeat;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+}
+
 
 #main {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 36rem;
+    width: 34rem;
     padding: 1vw;
 }
 
@@ -16,22 +32,43 @@ $form-range-thumb-border: #959292;
     position: relative;
     text-align: center;
     font-size: 15px;
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
+    color: $darkDesaturatedBlue;
+    background: url(images/pattern-circles.svg);
+    background-position: center;
+    height: 150px;
+    background-size: 150px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #mainHeading {
-    font-size: 38px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+#mainHeading~p {
+    color: $grayishBlue
 }
 
 #contents {
+    background: white;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid $veryPaleBlue;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    color: $grayishBlue;
+    font-weight: 600;
 }
 
 .pageview {
     display: flex;
     justify-content: left;
     align-items: center;
+    margin-top: 8px;
 }
 
 .price {
@@ -40,10 +77,21 @@ $form-range-thumb-border: #959292;
     align-items: center;
 }
 
+.amount {
+    font-size: 24px;
+    color: $darkDesaturatedBlue;
+    font-weight: 600;
+}
+
+.cycle {
+    position: relative;
+    margin-top: -10px;
+}
+
 #inputRange {
     position: relative;
-    margin: 1.5rem 0;
-    padding: 0 4vw;
+    margin: 2.5rem 0;
+    padding: 0 1rem;
     width: 100%;
     text-align: center;
 }
@@ -55,11 +103,10 @@ $form-range-thumb-border: #959292;
 
 .progress {
     position: absolute;
-    top: 8.2px;
+    top: 7.0px;
     width: 50%;
     height: 10px;
-    // border: 0.1px solid black;
-    background: white;
+    background: $softCyan;
 }
 
 #amt {
@@ -67,9 +114,9 @@ $form-range-thumb-border: #959292;
     appearance: none;
     width: inherit;
     height: 10px;
-    border: 0.1px solid black;
+    border: 0.1px solid transparent;
     border-radius: 5px;
-    background: black;
+    background: $lightGrayishBlue;
     outline: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
@@ -81,15 +128,22 @@ $form-range-thumb-border: #959292;
     appearance: none;
     width: 32px;
     height: 32px;
-    border: 0.1px solid black;
+    border: 0.1px solid transparent;
     border-radius: 30px;
-    background-color: #ffffff;
     background: url('images/icon-slider.svg');
-    background-color: white;
+    background-color: $strongCyan;
     background-repeat: no-repeat;
     background-position: center;
     cursor: ew-resize;
     z-index: 1;
+}
+
+#amt::-webkit-slider-thumb:hover {
+    background-color: $softCyan;
+}
+
+#amt::-webkit-slider-thumb:active {
+    background-color: $strongCyan;
 }
 
 #amt::-webkit-slider-runnable-track {
@@ -98,8 +152,12 @@ $form-range-thumb-border: #959292;
 
 #priceParameters {
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    margin: 0 18%;
+    margin: 0 15%;
+    height: 40px;
+    color: $darkDesaturatedBlue;
+    font-size: 14px;
 }
 
 .toggle {
@@ -121,22 +179,27 @@ $form-range-thumb-border: #959292;
     width: var(--width);
     height: var(--height);
     border-radius: var(--border-radius);
-    background: #dddddd;
+    background: $lightGrayishBlue;
     transition: background 0.2s;
 }
 
-.toggle__input:checked~.toggle__fill {
-    background: #009578;
+.toggle__fill:hover {
+    background: $strongCyan;
 }
 
+.toggle__input:checked~.toggle__fill {
+    background: $lightGrayishBlueII;
+}
+
+// toggle thumb
 .toggle__fill::after {
     content: "";
     color: transparent;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: var(--height);
+    top: 1px;
+    left: 1px;
+    width: 18px;
+    height: 18px;
     background: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: var(--border-radius);
@@ -154,42 +217,42 @@ $form-range-thumb-border: #959292;
     align-items: center;
 }
 
-.discount-label {
-    margin-left: 5px;
-    align-self: flex-start;
-    margin-bottom: 20px;
-}
-
 #pDiscount {
-    border: 0.1px solid black;
+    background: $lightGrayishRed;
+    color: $lightRed;
+    border: 0.1px solid $lightGrayishRed;
     border-radius: 20px;
-    padding: 1px 4px;
+    padding: 4px;
     line-height: 8px !important;
-    font-size: 6px !important;
+    font-size: 10px !important;
     text-align: center;
     font-size: 8px;
+    margin-left: 10px;
 }
 
 #footer {
     display: flex;
     justify-content: space-between;
-    padding: 0 1vw;
+    padding: 0 1rem;
     align-items: center;
 }
 
 ul {
     list-style-image: url('images/icon-check.svg');
-    padding: 0 0.5vw;
+    padding: 0 1rem;
 }
 
 #start {
     outline: none;
-    background-color: black;
+    background-color: $darkDesaturatedBlue;
     border: 1px solid transparent;
     border-radius: 15px;
-    color: white;
+    color: $veryPaleBlue;
     width: 130px;
     height: 30px;
-    line-height: 20px;
+    line-height: 18px;
     font-size: 15px;
+    margin-top: -15px;
 }
+
+// breakpoint: 550px
