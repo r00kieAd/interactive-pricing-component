@@ -8,6 +8,7 @@ $lightGrayishBlue: hsl(224, 65%, 95%);
 $lightGrayishBlueII: hsl(223, 50%, 87%);
 $grayishBlue: hsl(225, 20%, 60%);
 $darkDesaturatedBlue: hsl(227, 35%, 25%);
+$mainFontSize: 15px;
 
 body {
     background: url(images/bg-pattern.svg);
@@ -26,12 +27,12 @@ body {
     transform: translate(-50%, -50%);
     width: 34rem;
     padding: 1vw;
+    overflow: hidden;
 }
 
 #headline {
     position: relative;
     text-align: center;
-    font-size: 15px;
     margin-bottom: 4vw;
     color: $darkDesaturatedBlue;
     background: url(images/pattern-circles.svg);
@@ -45,12 +46,13 @@ body {
 }
 
 #mainHeading {
-    font-size: 30px;
+    font-size: clamp(24px, 4vw, 32px);
     font-weight: 800;
 }
 
 #mainHeading~p {
-    color: $grayishBlue
+    color: $grayishBlue;
+    font-size: clamp(12px, 2vw, $mainFontSize);
 }
 
 #contents {
@@ -59,7 +61,7 @@ body {
     border: 1px solid $veryPaleBlue;
     border-radius: 10px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-    font-size: 15px;
+    font-size: $mainFontSize;
     color: $grayishBlue;
     font-weight: 600;
 }
@@ -78,7 +80,7 @@ body {
 }
 
 .amount {
-    font-size: 24px;
+    font-size: calc($mainFontSize + 9px);
     color: $darkDesaturatedBlue;
     font-weight: 600;
 }
@@ -90,7 +92,7 @@ body {
 
 #inputRange {
     position: relative;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
     padding: 0 1rem;
     width: 100%;
     text-align: center;
@@ -99,6 +101,7 @@ body {
 #rangeInputDiv {
     width: inherit;
     position: relative;
+    margin-top: 1.5vh;
 }
 
 .progress {
@@ -154,10 +157,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 0 15%;
+    margin: 0 12%;
     height: 40px;
     color: $darkDesaturatedBlue;
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, $mainFontSize);
 }
 
 .toggle {
@@ -196,10 +199,10 @@ body {
     content: "";
     color: transparent;
     position: absolute;
-    top: 1px;
-    left: 1px;
-    width: 18px;
-    height: 18px;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
     background: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: var(--border-radius);
@@ -230,6 +233,12 @@ body {
     margin-left: 10px;
 }
 
+hr {
+    margin: 3vh 2vw;
+    border: none;
+    border-top: 1px solid $lightGrayishBlueII;
+}
+
 #footer {
     display: flex;
     justify-content: space-between;
@@ -256,3 +265,39 @@ ul {
 }
 
 // breakpoint: 550px
+
+@media screen and (max-width: 550px) {
+
+    body {
+        background-position: top;
+        background-size: 100vw 35vh;
+    }
+
+    #main {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: auto;
+        margin: 10vh 2vw 0 2vw;
+    }
+
+    #priceParameters {
+        margin: 0 0;
+    }
+
+    #footer {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    #start {
+        // margin-top: 0;
+        margin: 2vh 0;
+    }
+}
