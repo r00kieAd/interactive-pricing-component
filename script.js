@@ -17,5 +17,7 @@ $('#amt').on("input", function () {
 
 $('#myToggle').on('change', function () {
     const rate = $('.amount span').text();
-    $('.amount span').text(`${$('#myToggle').is(':checked') ? parseFloat(rate-(rate * 0.25)) : rate*4}`);
+    const discount = parseInt(rate * 0.25);
+    $('.amount span').text(`${$('#myToggle').is(':checked') ? parseInt(rate-discount) : originalRate}`);
+    const originalRate = rate;
 })
