@@ -3,14 +3,19 @@ $('#amt').on("input", function () {
     $('#views').text(`${pageViews == 1000 ? '1': pageViews}` + `${pageViews == 1000 ? 'M' : 'K'}`);
     $('.progress').css('width', `${parseInt(pageViews/10)}%`);
     if (pageViews >= 10 && pageViews < 50) {
+        $('.amount span').attr('original-price', '8');
         $('.amount span').text(`${$('#myToggle').is(':checked') ? parseFloat(8-(8 * 0.25)) : parseInt(2 * 4)}`); //edited calculation
     } else if (pageViews >= 50 && pageViews < 100) {
+        $('.amount span').attr('original-price', '12');
         $('.amount span').text(`${$('#myToggle').is(':checked') ? parseFloat(12-(12 * 0.25)) : parseInt(3 * 4)}`); //edited calculation
     } else if (pageViews >= 100 && pageViews < 500) {
+        $('.amount span').attr('original-price', '16');
         $('.amount span').text(`${$('#myToggle').is(':checked') ? parseFloat(16-(16 * 0.25)) : parseInt(4 * 4)}`); //edited calculation
     } else if (pageViews >= 500 && pageViews < 1000) {
+        $('.amount span').attr('original-price', '24');
         $('.amount span').text(`${$('#myToggle').is(':checked') ? parseFloat(24-(24 * 0.25)) : parseInt(6 * 4)}`); //edited calculation
     } else {
+        $('.amount span').attr('original-price', '36');
         $('.amount span').text(`${$('#myToggle').is(':checked') ? parseFloat(36-(36 * 0.25)) : parseInt(9 * 4)}`); //edited calculation
     }
 });
@@ -18,6 +23,5 @@ $('#amt').on("input", function () {
 $('#myToggle').on('change', function () {
     const rate = $('.amount span').text();
     const discount = parseInt(rate * 0.25);
-    $('.amount span').text(`${$('#myToggle').is(':checked') ? parseInt(rate-discount) : originalRate}`);
-    const originalRate = rate;
+    $('.amount span').text(`${$('#myToggle').is(':checked') ? parseInt(rate-discount) : $('.amount span').attr('original-price')}`);
 })
